@@ -27,6 +27,7 @@ eureka:
     service-url:
       # defaultZone: http://localhost:7001/eureka
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
-  # 主机名
+
   instance:
-    instance-id: payment8001
+    instance-id: payment8001   # 主机名
+    prefer-ip-address: true #显示ip
