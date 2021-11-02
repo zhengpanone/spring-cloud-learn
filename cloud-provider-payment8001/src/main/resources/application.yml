@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: cloud-payment-service
+    name: cloud-payment-service-8001
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -25,5 +25,6 @@ eureka:
     # 是否从EurekaServer抓取自己有的注册信息,默认为true,单节点无所谓,集群必须设置为true才能配置ribbon使用负载均衡
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:7001/eureka
+      # defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
 
