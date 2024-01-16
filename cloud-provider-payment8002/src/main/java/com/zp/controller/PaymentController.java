@@ -72,7 +72,46 @@ public class PaymentController {
     public String getPaymentLB() {
         return serverPort;
     }
+    @GetMapping("/afterPredicates")
+    public String afterPredicates() {
+        return serverPort+"afterPredicates";
+    }
+    @GetMapping("/beforePredicates")
+    public String beforePredicates() {
+        return serverPort+"beforePredicates";
+    }
+    @GetMapping("/betweenPredicates")
+    public String betweenPredicates() {
+        return serverPort+"betweenPredicates";
+    }
+    @GetMapping("/headerPredicates")
+    public String headerPredicates() {
+        return serverPort+"headerPredicates";
+    }
+    @GetMapping("/cookiePredicates")
+    public String cookiePredicates() {
+        return serverPort+"cookiePredicates";
+    }
 
+    @GetMapping("/hostPredicates")
+    public String hostPredicates() {
+        return serverPort+"hostPredicates";
+    }
+
+    @RequestMapping("/methodPredicates")
+    public String methodPredicates() {
+        return serverPort+"methodPredicates";
+    }
+
+    @GetMapping("/pathPredicates")
+    public String pathPredicates() {
+        return serverPort+"pathPredicates";
+    }
+
+    @GetMapping("/queryPredicates")
+    public String queryPredicates() {
+        return serverPort+"queryPredicates";
+    }
     @GetMapping("/feign/timeout")
     public String paymentFeignTimeout() {
         try {

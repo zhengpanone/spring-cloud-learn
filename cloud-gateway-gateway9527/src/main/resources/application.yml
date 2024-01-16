@@ -21,6 +21,50 @@ spring:
           uri: lb://cloud-payment-service #匹配后提供服务的路由地址
           predicates:
             - Path=/payment/lb/**
+        - id: after_route
+          uri: lb://cloud-payment-service
+          predicates:
+            - After=2024-01-16T19:44:16.208+08:00[Asia/Shanghai]
+            - Path=/payment/afterPredicates/**
+        - id: before_route
+          uri: lb://cloud-payment-service
+          predicates:
+            - Before=2024-01-16T19:48:16.208+08:00[Asia/Shanghai]
+            - Path=/payment/beforePredicates/**
+        - id: between_route
+          uri: lb://cloud-payment-service
+          predicates:
+            - Between=2024-01-16T19:31:16.208+08:00[Asia/Shanghai],2024-01-16T19:48:16.208+08:00[Asia/Shanghai]
+            - Path=/payment/betweenPredicates/**
+        - id: cookie_route
+          uri: lb://cloud-payment-service
+          predicates:
+            - Cookie=chocolate, ch.p
+            - Path=/payment/cookiePredicates/**
+        - id: header_route
+          uri: lb://cloud-payment-service
+          predicates:
+            - Header=X-Request-Id, \d+
+            - Path=/payment/headerPredicates/**
+        - id: host_route
+          uri: lb://cloud-payment-service
+          predicates:
+            - Host=**.atguigu.com,**.abc.com,**.xyz.org
+            - Path=/payment/hostPredicates/**
+        - id: method_route
+          uri: lb://cloud-payment-service
+          predicates:
+            - Method=GET
+            - Path=/payment/methodPredicates/**
+        - id: path_route
+          uri: lb://cloud-payment-service
+          predicates:
+            - Path=/payment/pathPredicates/**
+        - id: query_route
+          uri: lb://cloud-payment-service
+          predicates:
+            - Query=username,\d+
+            - Path=/payment/queryPredicates/**
 ################################
 
 eureka:
