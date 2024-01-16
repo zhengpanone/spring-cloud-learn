@@ -112,6 +112,11 @@ public class PaymentController {
         return serverPort+"queryPredicates";
     }
 
+    @GetMapping("/addRequestHeaderFilter")
+    public String addRequestHeaderFilter() {
+        return serverPort+"addRequestHeaderFilters";
+    }
+
     @GetMapping("/feign/timeout")
     public String paymentFeignTimeout() {
         try {
