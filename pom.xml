@@ -4,119 +4,115 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.zp</groupId>
-    <artifactId>spring-cloud-learn</artifactId>
+    <groupId>com.zp.cloud</groupId>
+    <artifactId>cloud2024</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>cloud-provider-payment8001</module>
-        <module>cloud-consumer-order80</module>
-        <module>cloud-api-common</module>
-        <module>cloud-eureka-server7001</module>
-        <module>cloud-eureka-server7002</module>
-        <module>cloud-provider-payment8002</module>
-        <module>cloud-provider-payment8004</module>
-        <module>cloud-provider-consul-payment8006</module>
-        <module>cloud-consumer-consul-order80</module>
-        <module>cloud-consumer-feign-order80</module>
-        <module>cloud-provider-hystrix-payment8001</module>
-        <module>cloud-consumer-feign-hystrix-order80</module>
-        <module>cloudalibaba-provider-payment9001</module>
-        <module>cloudalibaba-consumer-nacos-order83</module>
-        <module>cloud-gateway-gateway9527</module>
-    </modules>
     <packaging>pom</packaging>
 
     <name>spring-cloud-learn</name>
     <!-- 统一管理jar包版本 -->
     <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <juint.version>4.12</juint.version>
-        <log4j.version>1.2.17</log4j.version>
-        <lombok.version>1.16.18</lombok.version>
-        <mysql.version>8.0.27</mysql.version>
-        <druid.version>1.2.6</druid.version>
-        <mybatis.spring.boot.version>1.3.0</mybatis.spring.boot.version>
-        <hutool.version>5.6.2</hutool.version>
+
+        <hutool.version>5.8.22</hutool.version>
+        <lombok.version>1.18.26</lombok.version>
+        <druid.version>1.1.20</druid.version>
+        <mybatis.springboot.version>3.0.2</mybatis.springboot.version>
+        <mysql.version>8.0.11</mysql.version>
+        <swagger3.version>2.2.0</swagger3.version>
+        <mapper.version>4.2.3</mapper.version>
+        <fastison2.version>2.0.40</fastison2.version>
+        <persistence-api.version>1.0.2</persistence-api.version>
+
+        <spring.boot.test.version>3.1.5</spring.boot.test.version>
+        <spring.boot.version>3.2.0</spring.boot.version>
+        <spring.cloud.version>2023.0.0</spring.cloud.version>
+        <spring.cloud.alibaba.version>2022.0.0.0</spring.cloud.alibaba.version>
+
     </properties>
     <dependencyManagement>
-        <dependencies>
 
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.2.2.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR1</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <!--spring-cloud-alibaba-->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2.1.0.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid</artifactId>
-                <version>${druid.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis.spring.boot.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>log4j</groupId>
-                <artifactId>log4j</artifactId>
-                <version>${log4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${juint.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>cn.hutool</groupId>
-                <artifactId>hutool-all</artifactId>
-                <version>${hutool.version}</version>
-            </dependency>
-        </dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <type>pom</type>
+            <scope>import</scope>
+            <version>${spring.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-dependencies</artifactId>
+            <type>pom</type>
+            <scope>import</scope>
+            <version>${spring.cloud.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+            <type>pom</type>
+            <scope>import</scope>
+            <version>${spring.cloud.alibaba.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis.springboot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>${mapper.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>${persistence-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+            <version>${swagger3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring.boot.test.version}</version>
+        </dependency>
+    </dependencies>
     </dependencyManagement>
-
-
-    <build>
-        <finalName>spring-cloud-learn</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <!-- <fork>true</fork> -->
-                    <addResources>true</addResources>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+                <skip>true</skip>
+            </configuration>
+            <!-- <version>3.1.2</version> -->
+        </plugin>
+    </plugins>
+</build>
 </project>

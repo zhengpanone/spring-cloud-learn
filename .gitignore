@@ -1,8 +1,0 @@
-*/target
-*.iml
-rebel.xml
-*/.classpath
-*/.project
-*/.factorypath
-*/.settings
-.idea/
